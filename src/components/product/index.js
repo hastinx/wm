@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { list } from './productList'
 import { useLocation } from 'react-router-dom'
 import ModalProduct from '../modal'
+import { useDispatch } from 'react-redux/es/exports'
+import { update } from '../../features/productSlice'
 
 
 const Product = () => {
@@ -10,6 +12,22 @@ const Product = () => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    const dispatch = useDispatch();
+
+    const updateCart = (param) => {
+        console.log(param)
+        let cart = {
+            id: param.id,
+            brand: param.brand,
+            img_src: param.img_src,
+            price: param.price,
+        }
+        let method = 'ADD';
+
+        dispatch(update({ cart, method }))
+        handleClose()
+    }
 
     const handleClick = (param) => {
         setDataProduct({
@@ -22,7 +40,7 @@ const Product = () => {
         handleShow()
     }
     return (
-        <div className='container-fluid vh-100 bg-dark d-flex gap-5 justify-content-center' >
+        <div className='container-fluid bg-dark d-flex gap-5 justify-content-center flex-wrap vh-100' >
             {list.map(product =>
 
                 <div className='card w-25 h-50 mt-5 product' key={product.id} onClick={() => handleClick(product)}>
@@ -57,7 +75,7 @@ const Product = () => {
 
             )}
 
-            <ModalProduct show={show} handleClose={() => handleClose()} dataProduct={dataProduct} />
+            <ModalProduct show={show} handleClose={() => handleClose()} dataProduct={dataProduct} addToCart={() => updateCart(dataProduct)} />
         </div>
     )
 }

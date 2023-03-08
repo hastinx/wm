@@ -2,14 +2,24 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './components/home';
+import ShowProduct from './components/product/showProduct';
+import { Provider } from 'react-redux';
+import { store } from './app/store';
+
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Home />} />
-      </Routes>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+
+
+        <Routes>
+          <Route path='/wm' element={<Home />} />
+          <Route path='/wm/show' element={<ShowProduct />} />
+        </Routes>
+
+      </BrowserRouter>
+    </Provider>
   );
 }
 

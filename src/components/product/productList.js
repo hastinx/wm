@@ -19,5 +19,6 @@ export const list = [
         'brand': 'Patek Philippe',
         'type': 'Nautilus 5990/1A Self Winding Sunburst Blue Steel',
         'price': 'IDR 2,495,000,000'
-    }
+    },
 ]
+
