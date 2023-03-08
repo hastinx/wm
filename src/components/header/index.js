@@ -16,7 +16,7 @@ const Header = () => {
         <div className='w-100 bg-white d-flex justify-content-between align-items-center' style={{ height: '75px' }}>
 
             <span className='fw-bold fs-6 mx-5 bg-dark text-white text-center p-3'>WARUNG MADURA</span>
-            {location.pathname === '/show' ? <div><button className='btn btn-sm border-0 h-50 ' disabled style={{ width: '75px' }}>
+            {location.pathname === '/wm/show' ? <div><button className='btn btn-sm border-0 h-50 ' disabled style={{ width: '75px' }}>
                 <span className={`${p_counter === 0 ? '' : 'me-3 '} fw-bold`}>{p_counter === 0 ? "" : p_counter}</span>
                 <span><i className="fa-solid fa-cart-shopping"></i></span>
 
