@@ -53,24 +53,6 @@ const Product = () => {
                         </div>
 
                     </div>
-                    {location.pathname === '/wm/' ? "" :
-                        <div className='card-footer bg-white d-flex justify-content-between align-items-center'>
-
-                            <div className='d-flex align-items-center gap-3 p-2 rounded border'>
-                                <button className='btn btn-sm btn-success fw-bold'>+</button>
-                                <span>0</span>
-                                <button className='btn btn-sm btn-light fw-bold'>-</button>
-                            </div>
-                            <div className='d-flex align-items-center gap-3 bg-light p-2 rounded'>
-                                <button className='btn btn-sm btn-light'><i className="fa-solid fa-cart-shopping"></i></button>
-                                |
-                                <button className='btn btn-sm btn-danger'><i className='fa-solid fa-trash' /></button>
-                            </div>
-
-
-                        </div>
-                    }
-
                 </div>
 
             )}
