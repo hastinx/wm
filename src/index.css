@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.product{
+  cursor: pointer;
+}
+
+.product:hover{
+  border-radius: 50px 20px;
+}
