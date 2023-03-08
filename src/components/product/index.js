@@ -53,7 +53,7 @@ const Product = () => {
                         </div>
 
                     </div>
-                    {location.pathname === '/' ? "" :
+                    {location.pathname === '/wm' ? "" :
                         <div className='card-footer bg-white d-flex justify-content-between align-items-center'>
 
                             <div className='d-flex align-items-center gap-3 p-2 rounded border'>
