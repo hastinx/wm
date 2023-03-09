@@ -5,6 +5,7 @@ import Home from './components/home';
 import ShowProduct from './components/product/showProduct';
 import { Provider } from 'react-redux';
 import { store } from './app/store';
+import AddProduct from './components/form/addProduct';
 
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
 
         <Routes>
           <Route path='/wm' element={<Home />} />
-          <Route path='/wm/show' element={<ShowProduct />} />
+          <Route path='/wm/cart' element={<ShowProduct />} />
+          <Route path='/wm/add' element={<AddProduct />} />
         </Routes>
 
       </BrowserRouter>

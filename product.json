@@ -1,0 +1,18 @@
+{
+  "products": [
+    {
+      "brand": "Hublots",
+      "img_src": "https://cdn.shopify.com/s/files/1/0516/0760/1336/products/3product-465.SE.2010.RW.1204-Xms-2023-03-04T1154420700_540x.jpg?v=1677925983",
+      "desc": " Big Bang 39 - 465.SE.2010.RW.1204 ",
+      "price": "168800000",
+      "id": 1
+    },
+    {
+      "brand": "Hublot",
+      "img_src": "https://cdn.shopify.com/s/files/1/0516/0760/1336/products/1product-421.CM.1130.RX-Xms-2023-03-04T1216140700_540x.jpg?v=1677925960",
+      "desc": " Big Bang 44 - 421.CM.1130.RX",
+      "price": "289000000",
+      "id": 2
+    }
+  ]
+}

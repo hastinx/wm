@@ -1,7 +1,9 @@
 import React from 'react'
 import { Modal } from 'react-bootstrap'
+import { formatRupiah } from '../../utils/format'
 
-const ModalProduct = ({ show, handleClose, title, dataProduct, addToCart }) => {
+const ModalProduct = ({ show, handleClose, title, dataProduct, addToCart, increment, decrement, countItems }) => {
+
     return (
         <>
             <Modal
@@ -20,7 +22,7 @@ const ModalProduct = ({ show, handleClose, title, dataProduct, addToCart }) => {
                         <div className='d-flex flex-column'>
                             <span className='fs-6 fw-bold text-center'>{dataProduct.brand}</span>
                             <span className='fs-6 fw-light text-center text-wrap'>{dataProduct.type}</span>
-                            <span className='fs-6 fw-bold text-center'>{dataProduct.price}</span>
+                            <span className='fs-6 fw-bold text-center'>{formatRupiah(dataProduct.price, 'IDR ')}</span>
                         </div>
                     </div>
 
@@ -28,9 +30,9 @@ const ModalProduct = ({ show, handleClose, title, dataProduct, addToCart }) => {
                 <Modal.Footer>
                     <div className='bg-white d-flex justify-content-between align-items-center w-100'>
                         <div className='d-flex align-items-center gap-3 p-2 rounded border'>
-                            <button className='btn btn-sm btn-success fw-bold' disabled>+</button>
-                            <span>0</span>
-                            <button className='btn btn-sm btn-light fw-bold' disabled>-</button>
+                            <button className='btn btn-sm btn-success fw-bold' onClick={increment}>+</button>
+                            <span>{dataProduct.qty === undefined ? 1 : dataProduct.qty}</span>
+                            <button className='btn btn-sm btn-light fw-bold' onClick={decrement}>-</button>
                         </div>
                         <div className='d-flex align-items-center gap-3 bg-light p-2 rounded'>
                             <button className='btn btn-sm btn-light' onClick={addToCart}><i className="fa-solid fa-cart-shopping"></i></button>
