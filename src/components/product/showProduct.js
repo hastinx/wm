@@ -25,9 +25,7 @@ const ShowProduct = () => {
   };
 
   const incrementItems = (param) => {
-    // console.log(param);
     setCount(count + 1);
-    let totalPrice = param.price * count;
 
     let cart = {
       id: param.id,
@@ -64,58 +62,60 @@ const ShowProduct = () => {
   return (
     <div>
       <Header />
-      {p_cart.map((wishlist) => (
-        <div className="card" key={wishlist.id}>
-          <div className="card-body d-flex justify-content-between align-items-center">
-            <div className="d-flex gap-3 align-items-center">
-              <img
-                src={wishlist.img_src}
-                alt=""
-                style={{ width: '62px', height: '62px' }}
-              />
+      {p_cart.length === 0
+        ? 'Anda belum memilih product'
+        : p_cart.map((wishlist) => (
+            <div className="card" key={wishlist.id}>
+              <div className="card-body d-flex justify-content-between align-items-center">
+                <div className="d-flex gap-3 align-items-center">
+                  <img
+                    src={wishlist.img_src}
+                    alt=""
+                    style={{ width: '62px', height: '62px' }}
+                  />
 
-              <div className="d-flex flex-column">
-                <span className="fs-6 fw-normal">{wishlist.brand}</span>
+                  <div className="d-flex flex-column">
+                    <span className="fs-6 fw-normal">{wishlist.brand}</span>
+                    <span className="fs-6 fw-light">
+                      {formatRupiah(wishlist.price, 'IDR ')}
+                    </span>
+                  </div>
+                </div>
                 <span className="fs-6 fw-light">
-                  {formatRupiah(wishlist.price, 'IDR ')}
+                  {formatRupiah(
+                    wishlist.totalPrice === undefined
+                      ? wishlist.price
+                      : wishlist.totalPrice,
+                    'IDR '
+                  )}
                 </span>
+                <div className="d-flex gap-3 align-items-center">
+                  <button
+                    className="btn btn-sm btn-danger"
+                    style={{ width: '32px', height: '32px' }}
+                    onClick={() => deleteCart(wishlist)}
+                  >
+                    <i className="fa-solid fa-trash" />
+                  </button>
+                  <div className="d-flex align-items-center gap-3 p-2 rounded border">
+                    <button
+                      className="btn btn-sm btn-success fw-bold"
+                      onClick={() => incrementItems(wishlist)}
+                    >
+                      +
+                    </button>
+                    <span>{wishlist.qty === undefined ? 1 : wishlist.qty}</span>
+                    <button
+                      className="btn btn-sm btn-light fw-bold"
+                      onClick={() => decrementItems(wishlist)}
+                    >
+                      -
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
-            <span className="fs-6 fw-light">
-              {formatRupiah(
-                wishlist.totalPrice === undefined
-                  ? wishlist.price
-                  : wishlist.totalPrice,
-                'IDR '
-              )}
-            </span>
-            <div className="d-flex gap-3 align-items-center">
-              <button
-                className="btn btn-sm btn-danger"
-                style={{ width: '32px', height: '32px' }}
-                onClick={() => deleteCart(wishlist)}
-              >
-                <i className="fa-solid fa-trash" />
-              </button>
-              <div className="d-flex align-items-center gap-3 p-2 rounded border">
-                <button
-                  className="btn btn-sm btn-success fw-bold"
-                  onClick={() => incrementItems(wishlist)}
-                >
-                  +
-                </button>
-                <span>{wishlist.qty === undefined ? 1 : wishlist.qty}</span>
-                <button
-                  className="btn btn-sm btn-light fw-bold"
-                  onClick={() => decrementItems(wishlist)}
-                >
-                  -
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      ))}
+          ))}
     </div>
   );
 };

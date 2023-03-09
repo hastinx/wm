@@ -2,7 +2,7 @@ import React from 'react'
 import { Modal } from 'react-bootstrap'
 import { formatRupiah } from '../../utils/format'
 
-const ModalProduct = ({ show, handleClose, title, dataProduct, addToCart, increment, decrement, countItems }) => {
+const ModalProduct = ({ show, handleClose, dataProduct, addToCart }) => {
 
     return (
         <>
@@ -29,11 +29,11 @@ const ModalProduct = ({ show, handleClose, title, dataProduct, addToCart, increm
                 </Modal.Body>
                 <Modal.Footer>
                     <div className='bg-white d-flex justify-content-between align-items-center w-100'>
-                        <div className='d-flex align-items-center gap-3 p-2 rounded border'>
+                        {/* <div className='d-flex align-items-center gap-3 p-2 rounded border'>
                             <button className='btn btn-sm btn-success fw-bold' onClick={increment}>+</button>
-                            <span>{dataProduct.qty === undefined ? 1 : dataProduct.qty}</span>
+                            <span>{countItems === undefined ? 1 : countItems}</span>
                             <button className='btn btn-sm btn-light fw-bold' onClick={decrement}>-</button>
-                        </div>
+                        </div> */}
                         <div className='d-flex align-items-center gap-3 bg-light p-2 rounded'>
                             <button className='btn btn-sm btn-light' onClick={addToCart}><i className="fa-solid fa-cart-shopping"></i></button>
                         </div>

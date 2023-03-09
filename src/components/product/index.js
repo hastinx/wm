@@ -32,38 +32,6 @@ const Product = () => {
     handleClose();
   };
 
-  const incrementItems = (param) => {
-    console.log(param.price);
-    setCount(count + 1);
-    let totalPrice = param.price * count;
-
-    let cart = {
-      id: param.id,
-      brand: param.brand,
-      img_src: param.img_src,
-      price: totalPrice,
-      qty: count,
-    };
-    let method = 'INCREMENT';
-    dispatch(update({ cart, method }));
-  };
-
-  const decrementItems = (param) => {
-    console.log(param.price);
-    count === 1 ? setCount(1) : setCount(count - 1);
-    let totalPrice = param.price * count;
-    console.log(param);
-    let cart = {
-      id: param.id,
-      brand: param.brand,
-      img_src: param.img_src,
-      price: totalPrice,
-      qty: count,
-    };
-    let method = 'DECREMENT';
-    dispatch(update({ cart, method }));
-  };
-
   const handleClick = (param) => {
     setDataProduct({
       id: param.id,
@@ -144,10 +112,7 @@ const Product = () => {
       <ModalProduct
         show={show}
         handleClose={() => handleClose()}
-        dataProduct={dataProduct}
         addToCart={() => updateCart(dataProduct)}
-        increment={() => incrementItems(dataProduct)}
-        decrement={() => decrementItems(dataProduct)}
       />
     </div>
   );
