@@ -28,21 +28,34 @@ const Header = () => {
                         </button>
                     </Link>
                 </div>
-                :
-                <div>
-                    <Link to="/wm/cart">
-                        <button className='btn btn-sm btn-outline-dark rounded-pill h-50 me-3' style={{ width: '75px' }}>
-                            <span className={`${p_counter === 0 ? '' : 'me-3 '} fw-bold`}>{p_counter === 0 ? "" : p_counter}</span>
-                            <span><i className="fa-solid fa-cart-shopping"></i></span>
-                        </button>
-                    </Link>
-                    <Link to="/wm/add">
-                        <button className='btn btn-sm btn-dark rounded-pill h-50 me-5' style={{ width: '75px' }}>
-                            <span><i className="fa-solid fa-plus"></i></span>
-                            <span className='fw-bold'>Add</span>
-                        </button>
-                    </Link>
-                </div>}
+                : location.pathname === '/wm/add' ?
+                    <div>
+                        <Link to="/wm">
+                            <button className='btn btn-sm btn-outline-dark rounded-pill h-50 me-3' style={{ width: '75px' }}>
+                                <span className='fw-bold'>Back</span>
+                            </button>
+                        </Link>
+                        <Link to="/wm/add">
+                            <button className='btn btn-sm btn-dark rounded-pill h-50 me-5' style={{ width: '75px' }}>
+                                <span><i className="fa-solid fa-plus"></i></span>
+                                <span className='fw-bold'>Add</span>
+                            </button>
+                        </Link>
+                    </div> :
+                    <div>
+                        <Link to="/wm/cart">
+                            <button className='btn btn-sm btn-outline-dark rounded-pill h-50 me-3' style={{ width: '75px' }}>
+                                <span className={`${p_counter === 0 ? '' : 'me-3 '} fw-bold`}>{p_counter === 0 ? "" : p_counter}</span>
+                                <span><i className="fa-solid fa-cart-shopping"></i></span>
+                            </button>
+                        </Link>
+                        <Link to="/wm/add">
+                            <button className='btn btn-sm btn-dark rounded-pill h-50 me-5' style={{ width: '75px' }}>
+                                <span><i className="fa-solid fa-plus"></i></span>
+                                <span className='fw-bold'>Add</span>
+                            </button>
+                        </Link>
+                    </div>}
 
         </div>
 
