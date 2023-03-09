@@ -32,6 +32,35 @@ const Product = () => {
     handleClose();
   };
 
+  const incrementItems = (param) => {
+    setCount(count + 1);
+    let cart = {
+      id: param.id,
+      brand: param.brand,
+      img_src: param.img_src,
+      price: param.price,
+      totalPrice: 0,
+      qty: count,
+    };
+
+    let method = 'INCREMENT';
+    dispatch(update({ cart, method }));
+  };
+
+  const decrementItems = (param) => {
+    let cart = {
+      id: param.id,
+      brand: param.brand,
+      img_src: param.img_src,
+      price: param.price,
+      totalPrice: 0,
+      qty: count,
+    };
+
+    let method = 'DECREMENT';
+    dispatch(update({ cart, method }));
+  };
+
   const handleClick = (param) => {
     setDataProduct({
       id: param.id,
@@ -112,6 +141,7 @@ const Product = () => {
       <ModalProduct
         show={show}
         handleClose={() => handleClose()}
+        dataProduct={dataProduct}
         addToCart={() => updateCart(dataProduct)}
       />
     </div>
