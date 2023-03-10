@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../header';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 
 const AddProduct = () => {
+  const [display, setDisplay] = useState('none');
   const addItems = () => {
     fetch('http://localhost:9000/products', {
       method: 'POST',
@@ -19,7 +20,10 @@ const AddProduct = () => {
     })
       .then((res) => {
         {
-          alert('sukses');
+          setDisplay('block');
+          setTimeout(() => {
+            setDisplay('none');
+          }, 2000);
           document.getElementById('form-submit').reset();
         }
       })
@@ -54,6 +58,13 @@ const AddProduct = () => {
           <div className="col-md-12">
             <div className="card mt-5">
               <div className="card-body">
+                <div
+                  className="alert alert-success"
+                  style={{ display: `${display}` }}
+                  role="alert"
+                >
+                  Data product tersimpan.
+                </div>
                 <form
                   id="form-submit"
                   onSubmit={formik.handleSubmit}

@@ -13,6 +13,34 @@
       "desc": " Big Bang 44 - 421.CM.1130.RX",
       "price": "289000000",
       "id": 2
+    },
+    {
+      "brand": "Hublot   ",
+      "img_src": "https://cdn.shopify.com/s/files/1/0516/0760/1336/products/5product-421.NL.5170.RX-Xms-2023-03-04T1222490700_540x.jpg?v=1677925958",
+      "desc": "Big Bang 44 - 421.NL.5170.RX",
+      "price": "225000000",
+      "id": 3
+    },
+    {
+      "brand": "Rolex ",
+      "img_src": "https://cdn.shopify.com/s/files/1/0516/0760/1336/products/9product-279171G17-ROSE-JUB-Xms-2022-07-28T1840190700_540x.jpg?v=1659021301",
+      "desc": "Datejust 28 - 279171G17 ",
+      "price": "229500000",
+      "id": 4
+    },
+    {
+      "brand": "Longines",
+      "img_src": "https://cdn.shopify.com/s/files/1/0516/0760/1336/products/3product-L37784586-Xms-2023-02-15T1659540700_540x.jpg?v=1676459374",
+      "desc": " Conquest L37774586 ",
+      "price": "18500000",
+      "id": 5
+    },
+    {
+      "brand": "TAG Heuer",
+      "img_src": "https://cdn.shopify.com/s/files/1/0516/0760/1336/products/5product-CV201AP.FC6429-Xms-2023-02-13T1150310700_540x.jpg?v=1676283413",
+      "desc": " Carerra CV201AP.FC6429 ",
+      "price": "59500000",
+      "id": 6
     }
   ]
 }
