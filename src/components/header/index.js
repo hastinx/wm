@@ -62,6 +62,18 @@ const Header = () => {
               <span className="fw-bold">Back</span>
             </button>
           </Link>
+          <Link to="/wm/login">
+            <button
+              className="btn btn-sm btn-dark rounded-pill h-50 me-5"
+              style={{ width: '75px' }}
+              onClick={() => {
+                localStorage.removeItem('users');
+                navigate('/wm/login');
+              }}
+            >
+              <span className="fw-bold">Logout</span>
+            </button>
+          </Link>
         </div>
       ) : location.pathname === '/wm/add' ? (
         <div>
