@@ -6,6 +6,10 @@ import ShowProduct from './components/product/showProduct';
 import { Provider } from 'react-redux';
 import { store } from './app/store';
 import AddProduct from './components/form/addProduct';
+import Register from './pages/auth/register';
+import Login from './pages/auth/login';
+import Menu from './pages/auth/menu';
+import User from './pages/user';
 
 
 function App() {
@@ -18,6 +22,10 @@ function App() {
           <Route path='/wm' element={<Home />} />
           <Route path='/wm/cart' element={<ShowProduct />} />
           <Route path='/wm/add' element={<AddProduct />} />
+          <Route path='/wm/register' element={<Register />} />
+          <Route path='/wm/login' element={<Login />} />
+          <Route path='/wm/menu' element={<Menu />} />
+          <Route path='/wm/userpage' element={<User />} />
         </Routes>
 
       </BrowserRouter>
