@@ -11,16 +11,36 @@ const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   //*validasi form rwgistrasi menggunakan formik dan yup
-  const loginUsers = async () => {
+  const loginUsersByAPI = async () => {
 
     try {
       let data = await axios.get('http://localhost:9000/user?email=' + formik.values.email + '&password=' + formik.values.password)
-      localStorage.setItem('users', JSON.stringify(data.data));
-      let userLogin = data.data[0]
-      dispatch(login({ userLogin }));
+
+      if (data.data.length === 0) {
+        alert("Email tidak ditemukan")
+        loginUsers()
+      } else {
+        localStorage.setItem('users', JSON.stringify(data.data));
+        let userLogin = data.data[0]
+        dispatch(login({ userLogin }));
+        navigate('/wm/menu');
+      }
+
     } catch (error) {
       alert(error)
+      loginUsers()
     }
+
+  };
+
+  const loginUsers = () => {
+
+    let users = [{
+      username: 'admin_khusus',
+      email: formik.values.email,
+      password: formik.values.password
+    }]
+    localStorage.setItem('users', JSON.stringify(users))
     navigate('/wm/menu');
   };
 
@@ -38,7 +58,7 @@ const Login = () => {
 
     /**OnSubmit merupakan event bawaan dari formik yang berfungsi
      * mengekseskusi submit data dan memberikan feedback proses validasi  */
-    onSubmit: loginUsers,
+    onSubmit: loginUsersByAPI,
 
     /**
      * pattern validasi yang akan kita gunakan pada form input
