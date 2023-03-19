@@ -67,7 +67,7 @@ const Register = () => {
   };
 
   return (
-    <div className="container p-5">
+    <div className="container p-5 bg-secondary">
       <div className="row vh-100">
         <div className="col-md-6"></div>
         <div className="col-md-6 d-flex justify-content-center align-items-center">
@@ -90,7 +90,7 @@ const Register = () => {
                         }`}
                       type="text"
                       name="username"
-                      onChange={handleChange}
+                      onChange={() => handleChange}
                     />
                     {formik.errors.username ? (
                       <div class="invalid-feedback">
@@ -111,7 +111,7 @@ const Register = () => {
                         }`}
                       type="email"
                       name="email"
-                      onChange={handleChange}
+                      onChange={() => handleChange}
                     />
                     {formik.errors.email ? (
                       <div class="invalid-feedback">{formik.errors.email}</div>
@@ -130,7 +130,7 @@ const Register = () => {
                         }`}
                       type="password"
                       name="password"
-                      onChange={handleChange}
+                      onChange={() => handleChange}
                     />
                     {formik.errors.password ? (
                       <div class="invalid-feedback">

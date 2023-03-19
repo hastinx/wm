@@ -106,7 +106,7 @@ const Login = () => {
                         }`}
                       type="email"
                       name="email"
-                      onChange={handleChange}
+                      onChange={() => handleChange}
                     />
                     {formik.errors.email ? (
                       <div class="invalid-feedback">{formik.errors.email}</div>
@@ -125,7 +125,7 @@ const Login = () => {
                         }`}
                       type="password"
                       name="password"
-                      onChange={handleChange}
+                      onChange={() => handleChange}
                     />
                     {formik.errors.password ? (
                       <div class="invalid-feedback">
